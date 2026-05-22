@@ -9,6 +9,7 @@ import RotaProtegida from "./Routes/RotaProtegida";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/login";
 import Favoritos from "./Pages/Favoritos/Favoritos";
+import Filme from "./Pages/Filme/Filme";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/filme/:id" element={<Filme />} />
 
             <Route element={<RotaProtegida />}>
               <Route path="/favoritos" element={<Favoritos />} />
