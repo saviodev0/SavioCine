@@ -4,6 +4,7 @@ import Header from "./Componentes/Header";
 
 import { ThemeProvider } from "./Contexts/ThemeContexts";
 import { AuthProvider } from "./Contexts/AuthContext";
+import RotaProtegida from "./Routes/RotaProtegida";
 
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/login";
@@ -19,7 +20,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/favoritos" element={<Favoritos />} />
+
+            <Route element={<RotaProtegida />}>
+              <Route path="/favoritos" element={<Favoritos />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </AuthProvider>
