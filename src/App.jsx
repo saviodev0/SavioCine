@@ -2,14 +2,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./Componentes/Header";
 
+import { ThemeProvider } from "./Contexts/ThemeContexts";
+
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/login";
 import Favoritos from "./Pages/Favoritos/Favoritos";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
+    <ThemeProvider>
+      <BrowserRouter>
+        <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -19,6 +22,7 @@ function App() {
         <Route path="/favoritos" element={<Favoritos />} />
       </Routes>
     </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
